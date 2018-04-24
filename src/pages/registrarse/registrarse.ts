@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegistrarsePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistrarsePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  imagen: string = null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegistrarsePage');
+  tomarFoto() {
+    const options: CameraOptions = {
+      quality: 100,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    this.camera.getPicture(options).then((imageData) => {
+
+      this.imagen = 'data:image/jpeg;base64,' + imageData;
+
+    }, (err) => {
+      console.error(err);
+    });
   }
 
 }

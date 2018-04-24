@@ -7,6 +7,8 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Camera } from '@ionic-native/camera';
+
 import { HomePage,ListPage, RecuperarContraPage, RegistrarsePage } from '../pages/index.paginas';
 
 @NgModule({
@@ -32,6 +34,7 @@ import { HomePage,ListPage, RecuperarContraPage, RegistrarsePage } from '../page
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

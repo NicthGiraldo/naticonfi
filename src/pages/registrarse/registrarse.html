@@ -1,12 +1,66 @@
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title text-center>Registrarse</ion-title>
+  <ion-navbar color="primary" text-center>
+    <ion-title>Registrarse</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-title text-center>NATICONFI
+      <ion-icon name="md-aperture" color="primary"></ion-icon>
+    </ion-title>
+    <br>
+    <br>
+
+    <ion-item>
+      <ion-label stacked>Cédula ciudadania</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nombre</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Dirección</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Telefono</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Correo</ion-label>
+      <ion-input type="mail"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Confirmar contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <button ion-button  (click)="tomarFoto()">subir una foto</button>
+    <img [src]="imagen" *ngIf="imagen" />
+  </ion-list>
+
+  <div padding>
+    <button ion-button round block>
+      Ingresar
+    </button>
+  </div>
 
 </ion-content>

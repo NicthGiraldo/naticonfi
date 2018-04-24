@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage,ListPage, RecuperarContraPage } from '../pages/index.paginas';
+import { HomePage,ListPage, RegistrarsePage } from '../pages/index.paginas';
 
 @Component({
   templateUrl: 'app.html'
@@ -11,7 +11,7 @@ import { HomePage,ListPage, RecuperarContraPage } from '../pages/index.paginas';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = RecuperarContraPage;
+  rootPage: any = RegistrarsePage;
 
   pages: Array<{title: string, component: any}>;
 
